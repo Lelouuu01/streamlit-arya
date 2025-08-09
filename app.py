@@ -58,6 +58,11 @@ st.write(input_df)
 
 # Tombol untuk melakukan prediksi
 if st.button('Prediksi Kualitas'):
+    # --- TAMBAHKAN KODE DEBUG DI BAWAH INI ---
+    st.subheader("🕵️‍♂️ Info Debugging")
+    st.write("Berikut adalah nama kolom persis yang diterima oleh model:")
+    st.write(input_df.columns.tolist())
+    # -----------------------------------------
     # Lakukan prediksi menggunakan pipeline
     prediction = model.predict(input_df)
     prediction_proba = model.decision_function(input_df) # Menggunakan decision_function untuk SVC
